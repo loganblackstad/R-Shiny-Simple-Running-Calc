@@ -42,8 +42,15 @@ shinyUI(fluidPage(
                     textOutput("text_time"),
                     br(),
                     p(h5("Calculated values:")),
+<<<<<<< HEAD
                     textOutput("text_pace")
                     textOutput("text_pace_2")
+=======
+                    textOutput("text_pace"),
+                    br(),
+                    br(),
+                    br()
+>>>>>>> 239a6f4d2a44265426bf360a73a5e4de4826bc05
                 ),
                 tabPanel("Documentation",
                     p(h4("Simple Running Pace Calculator:")),
