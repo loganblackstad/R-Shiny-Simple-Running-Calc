@@ -1,5 +1,6 @@
 library(shiny)
 library(car)    # Import library to use recode() function
+library(shinyTime)
 
 shinyServer(function(input, output) {
     
@@ -40,6 +41,14 @@ shinyServer(function(input, output) {
         paste("Distance: ", recode(isolate(input$select_distance), "1 = 'Marathon'; 2 = 'Half-Marathon'; 3 = '10K'"))
     })
     
+    output$text_time <- renderText({
+        input$action_Calc
+        paste("Estimated Race Time: ", isolate(input$num_hours), ":", isolate(input$num_minutes), ":", isolate(input$num_seconds))
+    })
+
+    output$time_output1 <- renderText(strftime(input$time_input1, "%T"))
+   
+
     # Display calculated values
     
     output$text_pace <- renderText({
@@ -47,6 +56,8 @@ shinyServer(function(input, output) {
         else
             paste("Pace [min/mi]:  ", values$pace_minutes, "min ", values$pace_seconds, "sec", sep = "")
     })
+
+    
     
 #    output$text_amt <- renderText({
 #        if(input$action_Calc == 0) ""
