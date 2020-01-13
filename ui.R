@@ -43,7 +43,7 @@ shinyUI(fluidPage(
                     br(),
                     p(h5("Calculated values:")),
                     
-                    textOutput("text_pace")
+#                   textOutput("text_pace")
 #                   textOutput("text_pace_2")
 
                     textOutput("text_pace"),
